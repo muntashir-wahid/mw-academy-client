@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import ReactToPDF from "@kunwarji/react-to-pdf";
 
 const TermsAndConditions = () => {
   const pdfRef = useRef();
@@ -39,13 +38,6 @@ const TermsAndConditions = () => {
           Registration
         </Link>
       </p>
-      <ReactToPDF element={pdfRef} fileName="our-course" width={"100%"}>
-        {(toPdf) => (
-          <button type="button" onClick={toPdf}>
-            Click me
-          </button>
-        )}
-      </ReactToPDF>
     </article>
   );
 };
