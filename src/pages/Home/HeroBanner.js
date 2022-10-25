@@ -7,7 +7,7 @@ const HeroBanner = () => {
 
   const navigate = useNavigate();
   const navigateToPackagesHandler = () => {
-    navigate("/packages");
+    navigate("/courses");
   };
 
   return (

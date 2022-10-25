@@ -1,3 +1,6 @@
+import AllCourses from "../pages/AllCourses/AllCourses";
+import Blog from "../pages/Blog/Blog";
+import Faq from "../pages/Faq/Faq";
 import HeroBanner from "../pages/Home/HeroBanner";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -11,7 +14,14 @@ const routes = createBrowserRouter([
     children: [
       { index: true, element: <HeroBanner /> },
       { path: "/home", element: <HeroBanner /> },
-      { path: "/courses", element: <HeroBanner /> },
+      {
+        path: "/courses",
+        element: <AllCourses />,
+        loader: () =>
+          fetch("https://mw-academy-server.vercel.app/category/all"),
+      },
+      { path: "/blog", element: <Blog /> },
+      { path: "/faq", element: <Faq /> },
     ],
   },
 ]);
