@@ -20,6 +20,22 @@ const NavBar = () => {
     //   .catch((error) => console.errror(error));
   };
 
+  const togglerOnChaneHandler = (event) => {
+    const checked = event.target.checked;
+    const html = document.getElementsByTagName("html")[0];
+    if (checked) {
+      html.setAttribute("data-theme", "light");
+    } else {
+      html.setAttribute("data-theme", "dark");
+    }
+  };
+
+  const selectedThemeHandler = (event) => {
+    const selectedTheme = event.target.value;
+    const html = document.getElementsByTagName("html")[0];
+    html.setAttribute("data-theme", selectedTheme);
+  };
+
   return (
     <nav className="navbar bg-base-100">
       <div className="navbar-start">
@@ -48,7 +64,7 @@ const NavBar = () => {
               <NavLink
                 to="/home"
                 className={({ isActive }) =>
-                  isActive ? "bg-indigo-500" : undefined
+                  isActive ? "bg-base-300" : undefined
                 }
               >
                 Home
@@ -57,7 +73,7 @@ const NavBar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "bg-indigo-500" : undefined
+                  isActive ? "bg-base-300" : undefined
                 }
                 to="/courses"
               >
@@ -67,7 +83,7 @@ const NavBar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "bg-indigo-500" : undefined
+                  isActive ? "bg-base-300" : undefined
                 }
                 to="/blog"
               >
@@ -77,7 +93,7 @@ const NavBar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "bg-indigo-500" : undefined
+                  isActive ? "bg-base-300" : undefined
                 }
                 to="/faq"
               >
@@ -86,7 +102,7 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" className="text-blue-700 font-medium text-lg italic">
+        <Link to="/" className="text-primary font-medium text-lg italic">
           MW Academy
         </Link>
       </div>
@@ -95,7 +111,7 @@ const NavBar = () => {
           <li>
             <NavLink
               className={({ isActive }) =>
-                isActive ? "bg-indigo-500" : undefined
+                isActive ? "bg-base-300" : undefined
               }
               to="/home"
             >
@@ -105,7 +121,7 @@ const NavBar = () => {
           <li>
             <NavLink
               className={({ isActive }) =>
-                isActive ? "bg-indigo-500" : undefined
+                isActive ? "bg-base-300" : undefined
               }
               to="/courses"
             >
@@ -115,7 +131,7 @@ const NavBar = () => {
           <li>
             <NavLink
               className={({ isActive }) =>
-                isActive ? "bg-indigo-500" : undefined
+                isActive ? "bg-base-300" : undefined
               }
               to="/blog"
             >
@@ -125,7 +141,7 @@ const NavBar = () => {
           <li>
             <NavLink
               className={({ isActive }) =>
-                isActive ? "bg-indigo-500" : undefined
+                isActive ? "bg-base-300" : undefined
               }
               to="/faq"
             >
@@ -135,7 +151,26 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <input type="checkbox" className="toggle mr-2" />
+        {/* <input
+          onChange={togglerOnChaneHandler}
+          type="checkbox"
+          className="toggle mr-2"
+        /> */}
+        {/* Testing */}
+        <select
+          onChange={selectedThemeHandler}
+          className="select select-primary mr-2"
+        >
+          <option>light</option>
+          <option>dark</option>
+          <option>cupcake</option>
+          <option>valentine</option>
+          <option>retro</option>
+          <option>coffee</option>
+          <option>night</option>
+          <option>luxury</option>
+        </select>
+        {/* Testing end */}
         {user ? (
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -157,7 +192,7 @@ const NavBar = () => {
               <li>
                 <NavLink
                   className={`${({ isActive }) =>
-                    isActive && "bg-indigo-500"} justify-between`}
+                    isActive && "bg-base-300"} justify-between`}
                   to={`/user/${user?.uid}`}
                 >
                   Profile

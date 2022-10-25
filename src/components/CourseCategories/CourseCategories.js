@@ -5,7 +5,7 @@ const CourseCategories = ({ category, onSelectCategory }) => {
   return (
     <li>
       <button
-        className="btn btn-outline btn-accent w-full"
+        className="btn btn-outline btn-primary w-full"
         onClick={onSelectCategory.bind(null, id)}
       >
         {name}

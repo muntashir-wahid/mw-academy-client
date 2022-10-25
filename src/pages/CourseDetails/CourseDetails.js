@@ -6,7 +6,6 @@ const CourseDetails = () => {
   const courseData = useLoaderData();
   const pdfRef = useRef();
   const { courseName, picture, instructor, about, overview } = courseData;
-  console.log(courseData);
 
   return (
     <Fragment>
