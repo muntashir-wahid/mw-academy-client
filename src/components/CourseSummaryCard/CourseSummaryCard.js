@@ -1,8 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const CourseSummaryCard = ({ courseData }) => {
-  const { courseName, picture, instructor, about, rating, price } = courseData;
-  console.log(courseData);
+  const { courseId, courseName, picture, instructor, about, rating, price } =
+    courseData;
+
+  const navigate = useNavigate();
+
+  const showCourseDetailsHandler = (id) => {
+    navigate(`/course/${id}`);
+  };
+
   return (
     <article className="card bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
@@ -15,7 +23,12 @@ const CourseSummaryCard = ({ courseData }) => {
         <p>{rating}</p>
         <p>{price}</p>
         <div className="card-actions">
-          <button className="btn btn-primary">Show details</button>
+          <button
+            onClick={showCourseDetailsHandler.bind(null, courseId)}
+            className="btn btn-primary"
+          >
+            Show details
+          </button>
         </div>
       </div>
     </article>

@@ -1,5 +1,6 @@
 import AllCourses from "../pages/AllCourses/AllCourses";
 import Blog from "../pages/Blog/Blog";
+import CourseDetails from "../pages/CourseDetails/CourseDetails";
 import Faq from "../pages/Faq/Faq";
 import HeroBanner from "../pages/Home/HeroBanner";
 import LogIn from "../pages/LogIn/LogIn/LogIn";
@@ -22,6 +23,12 @@ const routes = createBrowserRouter([
         element: <AllCourses />,
         loader: () =>
           fetch("https://mw-academy-server.vercel.app/category/all"),
+      },
+      {
+        path: "course/:id",
+        element: <CourseDetails />,
+        loader: ({ params }) =>
+          fetch(`https://mw-academy-server.vercel.app/course/${params.id}`),
       },
       { path: "blog", element: <Blog /> },
       { path: "faq", element: <Faq /> },
