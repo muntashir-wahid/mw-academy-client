@@ -3,13 +3,13 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 // import { AuthContext } from "../../context/AuthProvider";
 
 const NavBar = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const { user, logOutHandler } = useContext(AuthContext);
   // // console.log(user);
   const user = false;
 
   const navigateToLoginHandler = () => {
-    // navigate("/login");
+    navigate("/login");
   };
 
   const userLogOutHandler = () => {
@@ -146,7 +146,7 @@ const NavBar = () => {
                       ? user?.photoURL
                       : "https://placeimg.com/80/80/people"
                   }
-                  alt=""
+                  alt="User"
                 />
               </div>
             </label>
