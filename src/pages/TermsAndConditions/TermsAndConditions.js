@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TermsAndConditions = () => {
   return (
@@ -28,6 +29,12 @@ const TermsAndConditions = () => {
         impedit! Doloremque quos aperiam optio laudantium, saepe deleniti. Ipsam
         nobis expedita ipsa voluptas earum quas, est distinctio modi, hic sed
         rerum beatae officiis culpa, blanditiis dicta non autem dolorum? Sed.
+      </p>
+      <p className="my-5">
+        Go back to{" "}
+        <Link to="/register" className="underline text-blue-500">
+          Registration
+        </Link>
       </p>
     </article>
   );
