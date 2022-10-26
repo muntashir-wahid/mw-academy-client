@@ -1,5 +1,5 @@
 import React, { Fragment, useRef } from "react";
-import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import ReactToPDF from "@kunwarji/react-to-pdf";
 
 const CourseDetails = () => {
