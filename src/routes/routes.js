@@ -1,5 +1,6 @@
 import AllCourses from "../pages/AllCourses/AllCourses";
 import Blog from "../pages/Blog/Blog";
+import CheckoutCourse from "../pages/CheckoutCourse/CheckoutCourse";
 import CourseDetails from "../pages/CourseDetails/CourseDetails";
 import Faq from "../pages/Faq/Faq";
 import HeroBanner from "../pages/Home/HeroBanner";
@@ -7,6 +8,7 @@ import LogIn from "../pages/LogIn/LogIn/LogIn";
 import Register from "../pages/LogIn/Register/Register";
 import UserProfile from "../pages/LogIn/UserProfile/UserProfile";
 import TermsAndConditions from "../pages/TermsAndConditions/TermsAndConditions";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../layout/Main");
@@ -31,12 +33,26 @@ const routes = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://mw-academy-server.vercel.app/course/${params.id}`),
       },
+      {
+        path: "/course/checkout/:id",
+        element: (
+          <PrivateRoute>
+            <CheckoutCourse />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://mw-academy-server.vercel.app/course/${params.id}`),
+      },
       { path: "blog", element: <Blog /> },
       { path: "faq", element: <Faq /> },
       { path: "login", element: <LogIn /> },
       {
         path: "user/:uid",
-        element: <UserProfile />,
+        element: (
+          <PrivateRoute>
+            <UserProfile />
+          </PrivateRoute>
+        ),
       },
       { path: "register", element: <Register /> },
       { path: "terms-and-conditions", element: <TermsAndConditions /> },

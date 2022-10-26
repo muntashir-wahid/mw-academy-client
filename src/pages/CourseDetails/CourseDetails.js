@@ -1,11 +1,17 @@
 import React, { Fragment, useRef } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import ReactToPDF from "@kunwarji/react-to-pdf";
 
 const CourseDetails = () => {
   const courseData = useLoaderData();
+  const navigate = useNavigate();
   const pdfRef = useRef();
-  const { courseName, picture, instructor, about, overview } = courseData;
+  const { courseId, courseName, picture, instructor, about, overview } =
+    courseData;
+
+  const navigateToPurchaseHandler = (id) => {
+    navigate(`/course/checkout/${id}`);
+  };
 
   return (
     <Fragment>
@@ -47,11 +53,17 @@ const CourseDetails = () => {
 
           <h5 className="text-lg font-medium mb-2">Overview</h5>
 
-          <ul className="list-disc list-inside">
+          <ul className="list-disc list-inside mb-8">
             {overview.map((el, index) => (
               <li key={index}>{el}</li>
             ))}
           </ul>
+          <button
+            onClick={navigateToPurchaseHandler.bind(null, courseId)}
+            className="btn btn-primary"
+          >
+            Purchase Course
+          </button>
         </div>
       </main>
     </Fragment>
