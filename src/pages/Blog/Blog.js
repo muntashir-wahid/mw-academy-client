@@ -30,10 +30,23 @@ const Blog = () => {
 
       <article className="mb-10">
         <h3 className="text-2xl font-medium mb-6">
-          Why are you using firebase? What other options do you have to
-          implement authentication?
+          Why am i using firebase? What other options do i have to implement
+          authentication?
         </h3>
-        <p></p>
+        <p className="font-medium mb-4">
+          I'm using firebase for authentication and client side hosting.
+        </p>
+        <p className="font-medium mb-4">
+          Other options for authentication instead of firebase
+        </p>
+        <ol className="list-inside list-decimal">
+          <li>STYTCH</li>
+          <li>Ory</li>
+          <li>Supabase</li>
+          <li>Okta</li>
+          <li>PingIdentity</li>
+          <li>Keycloak</li>
+        </ol>
       </article>
 
       {/* Blog 3 */}

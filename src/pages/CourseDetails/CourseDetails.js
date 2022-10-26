@@ -1,5 +1,6 @@
 import React, { Fragment, useRef } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { HiDocumentDownload } from "react-icons/hi";
 import ReactToPdf from "react-to-pdf";
 
 const CourseDetails = () => {
@@ -33,10 +34,8 @@ const CourseDetails = () => {
           />
           <div>
             <h2 className="text-5xl font-bold">{courseName}</h2>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+            <p className="py-6" title="Full descriotion is given below">
+              {about.slice(0, 100)}...
             </p>
             <ReactToPdf targetRef={pdfRef} filename={courseName} scale={0.5}>
               {({ toPdf }) => (
@@ -45,6 +44,7 @@ const CourseDetails = () => {
                   className="btn btn-primary"
                   onClick={toPdf}
                 >
+                  <HiDocumentDownload className="text-lg mr-1" />
                   Download Pdf
                 </button>
               )}
@@ -61,7 +61,7 @@ const CourseDetails = () => {
 
           <div className="flex flex-col gap-2 mb-6 text-lg font-medium">
             <p>Course Instructor: {instructor}</p>
-            <p>Totoal student : {students}</p>
+            <p>Totoal student(s) : {students}</p>
             <p>Rating : {rating}</p>
             <p>Price : {price}</p>
           </div>

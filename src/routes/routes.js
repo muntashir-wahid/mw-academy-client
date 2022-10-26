@@ -2,6 +2,7 @@ import AllCourses from "../pages/AllCourses/AllCourses";
 import Blog from "../pages/Blog/Blog";
 import CheckoutCourse from "../pages/CheckoutCourse/CheckoutCourse";
 import CourseDetails from "../pages/CourseDetails/CourseDetails";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Faq from "../pages/Faq/Faq";
 import HeroBanner from "../pages/Home/HeroBanner";
 import LogIn from "../pages/LogIn/LogIn/LogIn";
@@ -17,7 +18,7 @@ const routes = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
-    errorElement: <h1>Sorry!Something wrong happend</h1>,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HeroBanner /> },
       { path: "home", element: <HeroBanner /> },
