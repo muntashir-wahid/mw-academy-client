@@ -11,6 +11,7 @@ const CheckoutCourse = () => {
 
   const confirmPurchaseHandler = (event) => {
     event.preventDefault();
+    const purcheseForm = event.target;
     toast.success(
       `Congratulations!You have successfully purchased ${courseName} course`,
       {
@@ -24,6 +25,7 @@ const CheckoutCourse = () => {
         theme: "light",
       }
     );
+    purcheseForm.reset();
   };
   return (
     <Fragment>
@@ -45,6 +47,7 @@ const CheckoutCourse = () => {
           <div className="text-center">
             <h3 className="text-3xl font-semibold">Purchase Course</h3>
           </div>
+
           <div className="card flex-shrink-0  shadow-2xl bg-base-100">
             <form
               onSubmit={confirmPurchaseHandler}
@@ -59,7 +62,7 @@ const CheckoutCourse = () => {
                   placeholder="email"
                   defaultValue={user?.uid ? user?.displayName : ""}
                   className="input input-bordered"
-                  readOnly={user?.uid ? true : false}
+                  readOnly={user?.displayName ? true : false}
                 />
               </div>
               <div className="form-control">
@@ -71,7 +74,7 @@ const CheckoutCourse = () => {
                   placeholder="email"
                   className="input input-bordered"
                   defaultValue={user?.uid ? user?.email : ""}
-                  readOnly={user?.uid ? true : false}
+                  readOnly={user?.email ? true : false}
                 />
               </div>
               <div className="form-control">

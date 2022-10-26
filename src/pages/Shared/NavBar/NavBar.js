@@ -6,7 +6,6 @@ import logo from "../../../assets/logo.png";
 const NavBar = () => {
   const navigate = useNavigate();
   const { user, logOutHandler } = useContext(AuthContext);
-  // console.log(user);
 
   const navigateToLoginHandler = () => {
     navigate("/login");
@@ -29,12 +28,6 @@ const NavBar = () => {
       html.setAttribute("data-theme", "dark");
     }
   };
-
-  // const selectedThemeHandler = (event) => {
-  //   const selectedTheme = event.target.value;
-  //   const html = document.getElementsByTagName("html")[0];
-  //   html.setAttribute("data-theme", selectedTheme);
-  // };
 
   return (
     <nav className="navbar bg-base-100">
@@ -102,12 +95,14 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <div className="flex items-center">
-          <img src={logo} alt="logo" className="h-10" />
-          <Link to="/" className="text-primary font-medium text-lg italic">
-            MW Academy
-          </Link>
-        </div>
+
+        <Link
+          to="/"
+          className="text-primary font-medium text-lg italic flex items-center"
+        >
+          <img src={logo} alt="logo" className="w-9 h-9 mr-1 rounded-full" />
+          MW Academy
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
@@ -159,21 +154,7 @@ const NavBar = () => {
           type="checkbox"
           className="toggle mr-2"
         />
-        {/* Testing */}
-        {/* <select
-          onChange={selectedThemeHandler}
-          className="select select-primary mr-2"
-        >
-          <option>light</option>
-          <option>dark</option>
-          <option>cupcake</option>
-          <option>valentine</option>
-          <option>retro</option>
-          <option>coffee</option>
-          <option>night</option>
-          <option>luxury</option>
-        </select> */}
-        {/* Testing end */}
+
         {user ? (
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -185,7 +166,7 @@ const NavBar = () => {
                       : "https://placeimg.com/80/80/people"
                   }
                   alt="User"
-                  title="User Display Picture"
+                  title={user?.displayName ? user?.displayName : user.email}
                 />
               </div>
             </label>

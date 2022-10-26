@@ -10,27 +10,21 @@ const TermsAndConditions = () => {
         Our Terms and Conditions
       </h2>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis,
-        asperiores. Voluptatem cupiditate nihil molestias corrupti earum
-        repellendus labore maiores mollitia iste, illo ad quaerat libero! Omnis,
-        similique incidunt veniam nostrum autem eveniet officia fugit corporis
-        atque iusto? Sequi, dolorem unde!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil facilis
-        cumque, at provident alias commodi vitae sed, assumenda sequi fugiat
-        sint est nemo cupiditate deleniti possimus quos. Eum, ducimus suscipit!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit eum, ea
-        placeat, mollitia aliquid magni praesentium atque ab assumenda magnam
-        neque deleniti vel perspiciatis repellat cumque rem sunt facilis, quia
-        a! Facere ipsa quam, rem reiciendis quibusdam quod repudiandae accusamus
-        impedit maiores eos quaerat ex eaque unde! Voluptas at facilis, saepe
-        veniam rerum ipsum obcaecati, quaerat necessitatibus, ad id possimus
-        impedit! Doloremque quos aperiam optio laudantium, saepe deleniti. Ipsam
-        nobis expedita ipsa voluptas earum quas, est distinctio modi, hic sed
-        rerum beatae officiis culpa, blanditiis dicta non autem dolorum? Sed.
+        These Terms of Use ("Terms") were last updated on Sept. 23, 2022. MW
+        Academy’s mission is to improve lives through learning. We enable anyone
+        anywhere to create and share educational content (instructors) and to
+        access that educational content to learn (students). We consider our
+        marketplace model the best way to offer valuable educational content to
+        our users. We need rules to keep our platform and services safe for you,
+        us, and our student and instructor community. These Terms apply to all
+        your activities on the MW Academy website, the MW Academy mobile
+        applications, our TV applications, our APIs, and other related services
+        (“Services”). If you publish a course on the MW Academy platform, you
+        must also agree to the Instructor Terms. We also provide details
+        regarding our processing of personal data of our students and
+        instructors in our Privacy Policy. If you are using MW Academy as part
+        of your employer’s MW Academy Business learning and development program,
+        you can consult our MW Academy Business Privacy Statement.
       </p>
       <p className="my-5">
         Go back to{" "}

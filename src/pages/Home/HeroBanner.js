@@ -20,9 +20,9 @@ const HeroBanner = () => {
         <div className="max-w-md">
           <h1 className="mb-5 text-5xl font-bold">Hello Programmers</h1>
           <p className="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            In some ways, programming is like painting. You start with a blank
+            canvas and certain basic raw materials. You use a combination of
+            science, art, and craft to determine what to do with them.
           </p>
           <button
             onClick={navigateToPackagesHandler}

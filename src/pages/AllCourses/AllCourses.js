@@ -32,16 +32,11 @@ const AllCourses = () => {
 
   return (
     <main className="px-6 py-12">
-      <header className="mb-12">
+      <header className="mb-20">
         <h2 className="text-4xl text-center mb-6">Welcome to Our Courses</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi,
-          accusantium fugit magni officia a voluptatem quibusdam aut sapiente
-          explicabo quaerat fuga temporibus. Dolore, quidem asperiores. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Ullam tenetur nemo
-          deleniti tempora cum reprehenderit nihil velit culpa eligendi eveniet
-          aut iste consectetur commodi quod praesentium quam, officiis
-          repudiandae sequi nobis molestiae?
+        <p className="text-center">
+          Start, switch, or advance your career with our courses, Professional
+          Certificates, and degrees from world-class universities and companies.
         </p>
       </header>
 
