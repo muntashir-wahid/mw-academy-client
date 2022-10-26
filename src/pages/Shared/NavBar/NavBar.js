@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider";
+import logo from "../../../assets/logo.png";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -29,11 +30,11 @@ const NavBar = () => {
     }
   };
 
-  const selectedThemeHandler = (event) => {
-    const selectedTheme = event.target.value;
-    const html = document.getElementsByTagName("html")[0];
-    html.setAttribute("data-theme", selectedTheme);
-  };
+  // const selectedThemeHandler = (event) => {
+  //   const selectedTheme = event.target.value;
+  //   const html = document.getElementsByTagName("html")[0];
+  //   html.setAttribute("data-theme", selectedTheme);
+  // };
 
   return (
     <nav className="navbar bg-base-100">
@@ -101,9 +102,12 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
-        <Link to="/" className="text-primary font-medium text-lg italic">
-          MW Academy
-        </Link>
+        <div className="flex items-center">
+          <img src={logo} alt="logo" className="h-10" />
+          <Link to="/" className="text-primary font-medium text-lg italic">
+            MW Academy
+          </Link>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
@@ -150,13 +154,13 @@ const NavBar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        {/* <input
+        <input
           onChange={togglerOnChaneHandler}
           type="checkbox"
           className="toggle mr-2"
-        /> */}
+        />
         {/* Testing */}
-        <select
+        {/* <select
           onChange={selectedThemeHandler}
           className="select select-primary mr-2"
         >
@@ -168,7 +172,7 @@ const NavBar = () => {
           <option>coffee</option>
           <option>night</option>
           <option>luxury</option>
-        </select>
+        </select> */}
         {/* Testing end */}
         {user ? (
           <div className="dropdown dropdown-end">

@@ -1,6 +1,6 @@
 import React, { Fragment, useRef } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import ReactToPDF from "@kunwarji/react-to-pdf";
+import ReactToPdf from "react-to-pdf";
 
 const CourseDetails = () => {
   const courseData = useLoaderData();
@@ -29,8 +29,8 @@ const CourseDetails = () => {
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <ReactToPDF element={pdfRef} fileName={courseName} scale="0.6">
-              {(toPdf) => (
+            <ReactToPdf targetRef={pdfRef} filename={courseName}>
+              {({ toPdf }) => (
                 <button
                   type="button"
                   className="btn btn-primary"
@@ -39,7 +39,7 @@ const CourseDetails = () => {
                   Download Pdf
                 </button>
               )}
-            </ReactToPDF>
+            </ReactToPdf>
           </div>
         </div>
       </header>
