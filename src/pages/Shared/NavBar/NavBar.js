@@ -1,23 +1,22 @@
 import React, { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../context/AuthProvider";
+import { AuthContext } from "../../../context/AuthProvider";
 
 const NavBar = () => {
   const navigate = useNavigate();
-  // const { user, logOutHandler } = useContext(AuthContext);
-  // // console.log(user);
-  const user = false;
+  const { user, logOutHandler } = useContext(AuthContext);
+  // console.log(user);
 
   const navigateToLoginHandler = () => {
     navigate("/login");
   };
 
   const userLogOutHandler = () => {
-    // logOutHandler()
-    //   .then(() => {
-    //     navigate("/");
-    //   })
-    //   .catch((error) => console.errror(error));
+    logOutHandler()
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => console.errror(error));
   };
 
   const togglerOnChaneHandler = (event) => {

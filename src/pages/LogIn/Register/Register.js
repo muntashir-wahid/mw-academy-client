@@ -5,16 +5,16 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { FcGoogle } from "react-icons/fc";
 import { FaGithubSquare } from "react-icons/fa";
-// import { AuthContext } from "../../../context/AuthProvider";
+import { AuthContext } from "../../../context/AuthProvider";
 
 const Register = () => {
   // Hooks
-  // const {
-  //   createUserHandler,
-  //   signInWithGoogleHandler,
-  //   updateProfileHandler,
-  //   setIsLoading,
-  // } = useContext(AuthContext);
+  const {
+    createUserHandler,
+    signInWithGoogleHandler,
+    updateProfileHandler,
+    setIsLoading,
+  } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [isAccepted, setIsAaccepted] = useState(false);
   const checkedTermsRef = useRef();
@@ -37,41 +37,41 @@ const Register = () => {
 
     // Create user
 
-    // createUserHandler(email, password)
-    //   .then(() => {
-    //     setError("");
-    //     registerForm.reset();
-    //     setIsAaccepted(false);
-    //     toast.success("You have created an account!", {
-    //       position: "top-center",
-    //       autoClose: 1500,
-    //       hideProgressBar: false,
-    //       closeOnClick: true,
-    //       pauseOnHover: true,
-    //       draggable: true,
-    //       progress: undefined,
-    //       theme: "light",
-    //     });
-    //     updateProfileHandler(displayName, photoURL)
-    //       .then(() => {
-    //         setIsLoading(false);
-    //       })
-    //       .catch((error) => console.error(error));
-    //   })
-    //   .catch((error) => {
-    //     setError(error.message);
-    //   });
+    createUserHandler(email, password)
+      .then(() => {
+        setError("");
+        registerForm.reset();
+        setIsAaccepted(false);
+        toast.success("You have created an account!", {
+          position: "top-center",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        updateProfileHandler(displayName, photoURL)
+          .then(() => {
+            setIsLoading(false);
+          })
+          .catch((error) => console.error(error));
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   // Google Sign in
   const signInWithGoogle = () => {
-    // signInWithGoogleHandler()
-    //   .then(() => {
-    //     // console.log(user);
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
-    //   });
+    signInWithGoogleHandler()
+      .then(() => {
+        // console.log(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (

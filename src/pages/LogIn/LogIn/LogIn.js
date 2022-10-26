@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithubSquare } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../../context/AuthProvider";
+import { AuthContext } from "../../../context/AuthProvider";
 
 const LogIn = () => {
-  // const { logInHandler, signInWithGoogleHandler } = useContext(AuthContext);
+  const { logInHandler, signInWithGoogleHandler } = useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,27 +23,27 @@ const LogIn = () => {
 
     // User login
 
-    // logInHandler(email, password)
-    //   .then(() => {
-    //     setError("");
-    //     logInform.reset();
-    //     navigate(from, { replace: true });
-    //   })
-    //   .catch((error) => {
-    //     setError(error.message);
-    //   });
+    logInHandler(email, password)
+      .then(() => {
+        setError("");
+        logInform.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   // Google Sign in
   const signInWithGoogle = () => {
-    // signInWithGoogleHandler()
-    //   .then(() => {
-    //     // console.log(user);
-    //     navigate(from, { replace: true });
-    //   })
-    //   .catch((error) => {
-    //     // console.error(error);
-    //   });
+    signInWithGoogleHandler()
+      .then(() => {
+        // console.log(user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        // console.error(error);
+      });
   };
 
   return (

@@ -5,6 +5,7 @@ import Faq from "../pages/Faq/Faq";
 import HeroBanner from "../pages/Home/HeroBanner";
 import LogIn from "../pages/LogIn/LogIn/LogIn";
 import Register from "../pages/LogIn/Register/Register";
+import UserProfile from "../pages/LogIn/UserProfile/UserProfile";
 import TermsAndConditions from "../pages/TermsAndConditions/TermsAndConditions";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -33,6 +34,10 @@ const routes = createBrowserRouter([
       { path: "blog", element: <Blog /> },
       { path: "faq", element: <Faq /> },
       { path: "login", element: <LogIn /> },
+      {
+        path: "user/:uid",
+        element: <UserProfile />,
+      },
       { path: "register", element: <Register /> },
       { path: "terms-and-conditions", element: <TermsAndConditions /> },
     ],
