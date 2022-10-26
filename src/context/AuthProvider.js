@@ -4,6 +4,7 @@ import {
   deleteUser,
   getAuth,
   GoogleAuthProvider,
+  GithubAuthProvider,
   onAuthStateChanged,
   sendEmailVerification,
   signInWithEmailAndPassword,
@@ -20,6 +21,7 @@ const defaultContext = {
   createUserHandler: () => {},
   logInHandler: () => {},
   signInWithGoogleHandler: () => {},
+  signInWithGitHubHandler: () => {},
   logOutHandler: () => {},
   updateProfileHandler: () => {},
   emailVarificationHandler: () => {},
@@ -31,6 +33,7 @@ export const AuthContext = createContext(defaultContext);
 // Auth
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
+const gitHubProvider = new GithubAuthProvider();
 
 // Auth Provider component function
 const AuthProvider = ({ children }) => {
@@ -55,6 +58,13 @@ const AuthProvider = ({ children }) => {
   const signInWithGoogleHandler = () => {
     setIsLoading(true);
     return signInWithPopup(auth, googleProvider);
+  };
+
+  // User login with GitHub
+
+  const signInWithGitHubHandler = () => {
+    setIsLoading(true);
+    return signInWithPopup(auth, gitHubProvider);
   };
 
   // User logout
@@ -102,6 +112,7 @@ const AuthProvider = ({ children }) => {
     createUserHandler,
     logInHandler,
     signInWithGoogleHandler,
+    signInWithGitHubHandler,
     logOutHandler,
     updateProfileHandler,
     emailVarificationHandler,

@@ -24,10 +24,14 @@ const Blog = () => {
           the actual request.
         </p>
       </article>
+
+      {/* Blog 2 */}
+      {/* Why are you using firebase? What other options do you have to implement authentication? */}
+
       <article className="mb-10">
         <h3 className="text-2xl font-medium mb-6">
-          Why we use firebase? What other options do we have to implement
-          authentication?
+          Why are you using firebase? What other options do you have to
+          implement authentication?
         </h3>
         <p></p>
       </article>

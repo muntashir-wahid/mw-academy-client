@@ -185,6 +185,7 @@ const NavBar = () => {
                       : "https://placeimg.com/80/80/people"
                   }
                   alt="User"
+                  title="User Display Picture"
                 />
               </div>
             </label>

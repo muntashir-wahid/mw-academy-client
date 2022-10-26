@@ -6,8 +6,17 @@ const CourseDetails = () => {
   const courseData = useLoaderData();
   const navigate = useNavigate();
   const pdfRef = useRef();
-  const { courseId, courseName, picture, instructor, about, overview } =
-    courseData;
+  const {
+    courseId,
+    courseName,
+    picture,
+    instructor,
+    about,
+    overview,
+    students,
+    rating,
+    price,
+  } = courseData;
 
   const navigateToPurchaseHandler = (id) => {
     navigate(`/course/checkout/${id}`);
@@ -29,7 +38,7 @@ const CourseDetails = () => {
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
               et a id nisi.
             </p>
-            <ReactToPdf targetRef={pdfRef} filename={courseName}>
+            <ReactToPdf targetRef={pdfRef} filename={courseName} scale={0.5}>
               {({ toPdf }) => (
                 <button
                   type="button"
@@ -46,12 +55,18 @@ const CourseDetails = () => {
       <main ref={pdfRef} className="px-10 py-16">
         <div className="text-center font-medium mb-5">
           <h3 className=" text-2xl ">{courseName}</h3>
-          <h5 className=" text-lg ">{instructor}</h5>
         </div>
         <div>
           <p className="mb-5">{about}</p>
 
-          <h5 className="text-lg font-medium mb-2">Overview</h5>
+          <div className="flex flex-col gap-2 mb-6 text-lg font-medium">
+            <p>Course Instructor: {instructor}</p>
+            <p>Totoal student : {students}</p>
+            <p>Rating : {rating}</p>
+            <p>Price : {price}</p>
+          </div>
+
+          <h5 className="text-xl font-semibold mb-2">Overview</h5>
 
           <ul className="list-disc list-inside mb-8">
             {overview.map((el, index) => (
