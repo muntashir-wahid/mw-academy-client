@@ -12,6 +12,7 @@ const Register = () => {
   const {
     createUserHandler,
     signInWithGoogleHandler,
+    signInWithGitHubHandler,
     updateProfileHandler,
     setIsLoading,
   } = useContext(AuthContext);
@@ -68,6 +69,18 @@ const Register = () => {
     signInWithGoogleHandler()
       .then(() => {
         // console.log(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  // GitHub sign in
+
+  const signInWithGitHub = () => {
+    signInWithGitHubHandler()
+      .then(() => {
+        // console.log()
       })
       .catch((error) => {
         console.error(error);
@@ -179,7 +192,7 @@ const Register = () => {
           <div className="divider my-1">OR</div>
           <div className="card-body pt-0">
             <button
-              onClick={signInWithGoogle}
+              onClick={signInWithGitHub}
               className="btn btn-outline btn-primary"
             >
               <FaGithubSquare className="mr-2 text-black text-lg " />
