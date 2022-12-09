@@ -3,8 +3,11 @@ import { useLoaderData } from "react-router-dom";
 import CourseCategories from "../../components/CourseCategories/CourseCategories";
 import CourseSummaryCard from "../../components/CourseSummaryCard/CourseSummaryCard";
 import Loader from "../../components/Loader/Loader";
+import useChangeTitle from "../../hooks/useChangeTitle";
 
 const AllCourses = () => {
+  useChangeTitle("All Courses");
+
   const allCourses = useLoaderData();
   const [courses, setCourses] = useState(allCourses);
   const [categories, setCategories] = useState([]);

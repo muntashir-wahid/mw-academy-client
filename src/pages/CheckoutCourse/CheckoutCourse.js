@@ -3,11 +3,13 @@ import { useLoaderData } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../../context/AuthProvider";
 import "react-toastify/dist/ReactToastify.css";
+import useChangeTitle from "../../hooks/useChangeTitle";
 
 const CheckoutCourse = () => {
   const { user } = useContext(AuthContext);
   const courseData = useLoaderData();
   const { courseName, picture, price } = courseData;
+  useChangeTitle(`Checkout - ${courseName}`);
 
   const confirmPurchaseHandler = (event) => {
     event.preventDefault();

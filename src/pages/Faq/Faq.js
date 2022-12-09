@@ -1,6 +1,9 @@
 import React from "react";
+import useChangeTitle from "../../hooks/useChangeTitle";
 
 const Faq = () => {
+  useChangeTitle("FAQ");
+
   return (
     <div className="px-10 py-6">
       <h2 className="text-4xl font-semibold text-center mb-12">

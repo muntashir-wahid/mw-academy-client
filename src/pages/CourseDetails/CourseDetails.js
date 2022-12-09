@@ -2,6 +2,7 @@ import React, { Fragment, useRef } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { HiDocumentDownload } from "react-icons/hi";
 import ReactToPdf from "react-to-pdf";
+import useChangeTitle from "../../hooks/useChangeTitle";
 
 const CourseDetails = () => {
   const courseData = useLoaderData();
@@ -18,6 +19,8 @@ const CourseDetails = () => {
     rating,
     price,
   } = courseData;
+
+  useChangeTitle(courseName);
 
   const navigateToPurchaseHandler = (id) => {
     navigate(`/course/checkout/${id}`);

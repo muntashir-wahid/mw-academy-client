@@ -1,6 +1,9 @@
 import React from "react";
+import useChangeTitle from "../../hooks/useChangeTitle";
 
 const Blog = () => {
+  useChangeTitle("Blog");
+
   return (
     <section className="px-8 py-12">
       <h2 className="text-4xl text-center font-blod mb-16">
