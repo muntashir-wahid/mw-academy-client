@@ -1,8 +1,10 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import useChangeTitle from "../../hooks/useChangeTitle";
 
 const TermsAndConditions = () => {
   const pdfRef = useRef();
+  useChangeTitle("Terms and Conditions");
 
   return (
     <article className="mt-10 p-10" ref={pdfRef}>

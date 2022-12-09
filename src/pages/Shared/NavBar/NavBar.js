@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../context/AuthProvider";
 import logo from "../../../assets/logo.png";
+import useToggleTheme from "../../../hooks/useToggleTheme";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const { user, logOutHandler } = useContext(AuthContext);
+  const [theme, setTheme] = useState("light");
+  useToggleTheme(theme);
 
   const navigateToLoginHandler = () => {
     navigate("/login");
@@ -21,12 +24,10 @@ const NavBar = () => {
 
   const togglerOnChaneHandler = (event) => {
     const checked = event.target.checked;
-    const html = document.getElementsByTagName("html")[0];
-    if (checked) {
-      html.setAttribute("data-theme", "light");
-    } else {
-      html.setAttribute("data-theme", "dark");
-    }
+    setTheme(() => {
+      const theme = checked ? "dark" : "light";
+      return theme;
+    });
   };
 
   return (
